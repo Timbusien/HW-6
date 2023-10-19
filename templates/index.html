@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 style="text-align:center; color: #000">Welcome to our News showcase</h1>
+{% for category in categories %}
+        <h3>{{ category.title }}</h3>
+        <p>Время создания {{ category.created_at|date:'F, m' }}</p>
+{% endfor %}
+{% for news in news %}
+    {{ news.title }}
+{% endfor %}
+<h1 style="text-align:center; color: #000">News showcase</h1>
+<a href="{% url 'news' %}">Показать новости</a>
+</body>
+</html>
